@@ -1,0 +1,124 @@
+1 . List the operators in Java ? 
+Ans : In java there are various types of operators are used to perform various types of operations between the operands . Some types of Operators are, 	
+	1 . Arithmetic Operators		(+, -, *, /, % ) 	
+	2 . Assignment Operators 		( = , += , -= , *= , %= , /= ) 
+	3 . Comparison operators 		( == , != , >= , <= , > , < ) 
+	4 . Logical Operators/Sort Circuit operators 	( && , || , ! )
+	5 . Ternary Operators			 ( ? : ) 
+	6 . Bitwise operator 			( &, | , ~ , ^ ) 
+	7 . Increment and decrement operators			 ( ++ , -- ) 
+ And many more . 
+
+2 . Explain about increment and decrement operators and give an examples . 
+Ans:	Increment : Increment operator increment the value of the variable by one. This operation can Occur is two ways, Pre increment and Post increment . 
+	Pre Increment : it means first increment the value and then use it . 
+	int a = 10 ; 
+	System.out.println(++a) ; //  11 will be printed on console and 'a' value will be updated and will become 11 . 
+	Post Increment : it means first use the value and then increment it . 
+	int a = 10 ; 
+	System.out.println(a++) ; //  10 will be printed on console and 'a' value will be updated and will become 11 . 
+
+	Decrement: Decrement operator decrement the value of the variable by one . This operation can occur in two ways – Pre decrement , Post decrement . 
+	Pre Decrement : it means first decrement the value and then use it . 
+	int a = 10 ; 
+	System.out.println(--a) ; //  9 will be printed on console and 'a' value will be updated and will become  9. 
+	Post Decrement : it means first use the value and then decrement it . 
+	int a = 10 ; 
+	System.out.println(a--) ; //  10 will be printed on console and 'a' value will be updated and will become 9. 
+
+3 . What are the Conditional Operators in java ? 
+Ans : We use conditional operator when we want to make a comparison between more than one boolean expression . there are basically three types of conditional operators. these are logical -and , logical -or and ternary opeator . 
+
+	Logical-AND 	: We use '&&' symbol for logical-AND operator . this operator returns 'true' value when all the conditions are 'true' , if any one of the condition is 'false' then it returns 'false' . 
+	Syntax 	       	: 	if ( condition1 && condition2 ) {	//statement...	}
+
+	Logical-OR    	: We use ' || ' symbol for logical-OR operator . this operator returns 'false' value when all the conditions are 'false' , if any one of the condition is 'true' then it will return 'true' .
+	Syntax            	: 	if ( condition1 || condition2 ) {	//statement...	}
+
+	Ternary Operator : We use ' ?: ' symbol for ternary operator , we can say that it's the concise version of if-else statement , it saves our time but sometimes represent the logic by using ternnary operator becomes Complex . 
+	Syntax 		:	Condition ? (statement1 ) : (statement 2) ;  
+	
+4 . What are the types of operators based on the number of operands ? 
+Ans : There are three types of operators in java based on numbesrs. these are : 
+	Unary Operator 		: It works with only one Operand . 
+	Binary Operator 	: It works with Two Operand .
+	Ternary Operator 	: It works with Three Operand.
+ 
+5 . what are the conditional statements and use of conditional statements in java ? 
+Ans : In java we have use many conditional Statement based on our Requirements . these are if, else , else-if , switch 
+	if 		: Used to specify a block of code based on the condition and this block get executed when the condition is true . 
+	else 		: this block of code get executed when the if condition is false . 
+	else if	: Used to specify a block of code when the first condition is false . 
+	switch 	: In Programming we prefer 'switch' instead of  'if-else' . it is used to specify multiple specified block of code to be execute . 
+   
+6 . What is the syntax of if- else statement ? 
+Ans : Syntax of if-else Statement : 
+	if (condition ){
+		// statement ....
+	} else {
+		// statment ....
+	} 
+	
+	Programming Example : 
+	public class Main{
+		public static void main(String[ ] args) {
+			int age = 20 ; 
+			if (age >= 18 ){
+				System.out.println("Eligible for Vote ");
+			} else {
+				System.out.println("Not Eligible for Vote ");
+			}
+		}
+	}
+
+7 . what are the 3 types of iterative statment in java ? 
+Ans : There are three types of iterative stament in java. these are 
+	a . for 
+	b . while 
+	c . do - while 
+
+8 . what do you mean by Array ? 
+Ans : Array refers to the collection of similar types of elements , store in Memory at Contigious fasion . 
+	Similar type means ,In array we can keep element having the same data type other wise compiler will give error .
+	*	In java Arrays are treated as Object , and the Memory for the object is given in Heap Area . and JVM will give the default value for the variables based on the particular data type .  
+	*	In Array we can acces any element by mentioned its index with constant time [ O(1)  time ]
+	*	Index in Array is starting from 0 and the last index is calculated by subtracting the size of array by one . Eg: Let, our Array size is 10 , then the last index will be ( size - 1 ) here (10-1=9)  9 .
+	
+9 . How to create an Array ? 
+Ans : In Java Creation of Array is associated with multiple phase . these are , Array Declaration , Array Construction and if we want to initialize value in the array then for this Array Initialization . here we break 	down each phase : 
+	Array Declaration 	: In this phase ,we Mention the dimension of the array (one , two or multi-dimentional ) . Eg : int [ ] arr ; 
+	Array Construction	: In this , We Construct the Array by using 'new' operator and Mentioned our Array size. 'new' operator allocate the size of the array in heap Area and provide default value based on the data type .  
+					 Eg : int[ ] arr ; 
+						arr  = new int[5]; // 5 size array will be created in heap Area . 
+					ShortCut : int [ ] arr = new int [5] ; // we can write like this in single line  
+	Array Initialization	: If we want to initialize value to a index then we can easily do this by reffering the index.
+					Eg . arr[0] =  10 ; 
+					       arr[1] =  20 ;
+							::
+						arr[4] = 50 ; 
+	*	Types of Arrays in java : One-dimentional Array , Two-dimentional Array , Multio-dimentional Array , Jagged Array
+	*	In java, For every type(int,float ...) corresponding classes are available but this classes are part of java language and these are not applicable for programmer level . Eg : int [ ] arr = new int [5] ; // [ I@ ..
+
+10 . State the difference between StringBuffer and StringBuider ?
+Ans : In java StringBuffer and StringBuilder are two Commonly used Classes used for String Manipulation, they are Mutable in nature . So that we can perform any Modification within the Existing String . 
+	These Strings are comes with many methods . some Commonly used methods are - append( ) , insert( ) ,delete( ) and etc . 
+	StringBuilder and StringBuffer has similarity in there working nature, but still they have some difference which make them different from each other .here we mantioned these difference : 
+	
+	StringBuffer : 	1 . Introduced at JDK 1.0 version.
+				2 . Every methods available in stringBuffer is synchronized.
+				3 . It is ThreadSafe . 
+				4 . Waiting time is more , so performance is low . 
+				5 . Only one thread is allowed to operate on StringBuffer object . 
+				6 . Example : StringBuffer name = new StringBuffer("Ripan Baidya");   
+	
+	StringBuilder : 	1 . Introduced at JDK 1.5 version .
+				2 . methods available in stringBuilder is not synchronized.
+				3 . It is not ThreadSafe . 
+				4 . Waiting time is less , so performance is high . 
+				5 . Multiple threads are allowed to operate on StringBuilder object . 
+				6 . Example : StringBuilder dep = new StringBuilder("CSE");   
+	
+
+
+
+
