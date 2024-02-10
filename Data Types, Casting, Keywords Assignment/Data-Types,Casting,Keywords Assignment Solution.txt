@@ -1,0 +1,40 @@
+1 . What are primitive data types in Java? 
+Ans: In java there are Various types of data types are Present (Nine) , these are - byte, short, int, long, float, double, char, boolean, String. 
+
+2 . What are the identifiers in Java?
+Ans : Identifiers in java Refers to the name ,it is used for identification. The name can be a class name, method name, interface name, enum name, variables name and etc . There are several reserved words in java, which we can''t 
+	use as a identifier. for example : if , for , do - we can't use them as Identifier.
+
+3 . what is the final class in Java?
+Ans : The class Declared with a final keyword is called final class. we cant inherite the final class . 
+ 
+4 . what are the two ways to make a class final . 
+Ans : The first way to make a class 'final' is declared it with a final keyword , and the another way of make a class final is to make all its constructor as private so that it can't be sub classed .
+  
+5 . Can we Create an instance of the final class in another class? 
+Ans : We can create instance of final class in another class but the final class can't be inherited. 
+
+6 . what is the volatile keyword used for?
+Ans : 'volatile' keyword in java is used to tells the compiler that a variable may be accessed and modified by multiple threads and should not be catched. 
+
+7 . what is the use of the transient keyword?
+Ans : The transient keyword in java is usually used to indicate that a field should not be serialized . 
+
+8 . what are the types of casting?
+Ans : There are two types of casting 
+	1 . Primitive Casting : when data casted from one primitive type to another primitive type . 
+eg : 	byte b = 10 ; 
+	int n = b ;   
+	2 . Derived Casting : when data casted from one derived type to another derived type . 
+
+9 . what is boxing and unboxing?
+Ans : Boxing 	 : Wrapping of primitive content into its corresponding Wrapper Class object is called 'boxing'. 
+	Unboxing : Unwrapping of Wrapper class Object into its corresponding primitive content is called 'unboxing'.
+
+10 . what is the difference between keywords, identifiers, and literals in java?
+Ans : keywords : Key-words are reverved words in programming(java)  which has predefined meaning to the compiler .Eg. for , do, while, if  etc. We can't use the keywords as identifier. 
+	Identifiers  : Identifiers refers to the name in programming which is usually used for identification . it can be a class name, method name, enum name,  variable name and etc .
+	literals 	  : literals are value that are assigned to identifier . 
+	
+	Example : int  age = 19; 
+	here in this example, int is a 'keyword' , age is 'identifier' and 19 is 'literal' .    
