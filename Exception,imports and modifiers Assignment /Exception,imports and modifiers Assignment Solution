@@ -1,1 +1,165 @@
+1 . What is an Exception in java ? 
+Ans : In java Exception is an Unwanted Event which can Disrrupt the normal flow of  the Execution of the program. when Exception occurs at that time we need to handle it otherwise it will create issue at the execution time (Runtime) .
+	Java Language gains popularity in the Industry because of its Strong Exception Handling Mechanism Provided by Sun Microsystem . As a Programmer our Responsibility is to handle the Exception but, in case if we can't 
+	handle the exception Properly then the "Default Exception Handler " will  take the Responsibility of handling that Excepiton (all types ) .
+	 
+2 . What are the types of Exception ?
+Ans : In java We can Classified our Exception into two Categories , these are:  Checked Exception  and Un-Checked Exception .   
+	a. Checked Exception :		
+		 An Exception is said to be " Checked" if it is Checked by the Compiler Whether it is handling by the Programmer or not . 
+	 	Example : IOException,  FileNotFoundException and etc . 
+		We can further Classified the Checked Exception into two categories , these are : Partially Checked and Fully Checked Excepion . 
+			1 . Partially Checked : 	An Checked Exception is said to be Partially checked if and only if some of its child classes are Unchcked . 
+								Example : Exception , Throwable 
+			2 . Fully Checked 	: 	An Checked Exception is said to be fully checked if and only if all of its child classes are  also chcked .
+								Example : IOException  
+
+	b . Un-Checked Exception : 
+		 An Exception is said to be " Un-Checked" if it is not Checked by the Compiler Whether it is handled by the Programmer or not . 
+		RuntimeException and all of its Child Classes , Error and all of its child classes are falls in the category of Un-Checked Exception . 
+		Example : ArrayIndexOutOfBoundsException, NullPointerException and etc . 
+
+3 . How are Exceptions handles in java ? 
+Ans : In java , as a programmer our duty is to handle the Exception , but in case if we can't Handle it properly then it will be Handled by the JVM Default Exception Handler . 
+	lets try to understand with an example , that how java handles the exception . 
+	
+	Sample Code : 
+	~~~~~~~~~~
+	public class Main {
+		public static void main(String[ ]   args){
+			demo( ); 
+		}
+	pubic static void demo( ) {
+		System.out.println( 10/0 ) ; 
+		}
+	}
+	
+	Explanation :
+	~~~~~~~~~~
+	 In our program , Exception will raised inside the demo( ) at line-6 , now this method will create an Exception object . 
+		a . Now, the Exception object will handover to the JVM , now JVM will check whether this method(demo() )  has any handling logic for this or not . if it is not then abnormal termination will happen . 
+		b . Since , it is a called method so that exception object will be propagate to its caller method , here caller method is "main( ) " , now JVM will check whether the main( )  method has any handling logic for this or not . 
+			if it is not then exception object will propagate to JVM by terminating the main( )  .
+		c . Now , JVM will give this exception object to the "Default Exception Handler " and Default Exception Handler will handle the exception by printing these details of the exception . like : 
+			Name of the Exception , Description of the exception and Stack Trace . 
+
+	And this is how the Exceptions handles in java .  
+	
+4 . What are the important methods defined in java's Exception Class ? 
+Ans : In java we have few important methods provided by java Exception Class to print exception information to the console . these are : printStackTrace( ) , toString( ) , getMessage( ) 
+	a . printStackTrace ( ) : 
+		this method print the exception information in this format . like,  name of the exception , description of the excepiton , stack Trace . 
+		Internally this method is used by Default Exception Handler for printing exception information . 
+		this method doesn't require "System.out.println( ) " for printing . we can directly call the printStackTrace ( ) with the help of exception object . . Eg . e.printStackTrace ( ) ; 
+
+	b . toString ( )  : 
+		this method print the exception information in this format . like,  name of the exception , description of the excepiton. 
+
+	c . getMessage( ) :	 
+		this method only returns the description of the excepiton .
+
+5 . What are Runtime Exception in java ? 
+Ans : An Exception which occurs at Runtime is known as Runtime Exception . Runtime Exception is also known as Un-Checked Exception . 
+	In java the RuntimeException class and all of its child classes are falls under  Un-Checked  Exception . 
+	Example of RuntimeException : ArrayIndexOutOfBoundsException , NullPointerException, ArithmeticException and etc 
+
+	Code Example : 
+	 ~~~~~~~~~~~
+	1 . without Handling logic 
+		public class Main {
+    			public static void main(String[] args) {
+        			System.out.println(10/0); //  ArithmeticException will occur 
+    			}
+		}
+
+	2 . with Handling logic : 
+		public class Main {
+    			public static void main(String[] args) {
+				try {
+        			System.out.println(10/0); 
+				} catch(ArithmeticException e ) {
+					System.out.println(e);
+				}
+    			}
+		}
+
+6 . What is the difference between the throw and throws keyword in java ? 
+Ans : throw : 
+		1 . It is used inside the method body . 
+		2 . used to throw exception object manually . 
+		3 . used for throwing the userdefined object manually . 
+		4 . Example : throw new ArithmeticExcepiton("/ by zero") ;
+	throws : 
+		1 . It can be used at method signature level .  
+		2 . Mainly used for Checked Exception . 
+ 		3 . Example : public void demo( ) throws IOException {
+			 code ... 
+
+		    }
+
+7 . What is the difference between Error and Exception in java ? 
+Ans : 
+	Error : 	
+		1 . We can't Handle the Error . its occurs at Runtime . 
+		2 . Errors are Mainly caused by the Environment in which an application is running . 
+		3 . Example : StackOverflowError , OutOfMemoryError 
+	Exception : 
+		1 . We can Handle the Exception . its also Occurs at Runtime . 
+		2 . Exception are mainly caused by the application itself . 
+		3 . Example :  NullPointerException , FileNotFoundException
+
+8 . Explain the hierarcy of Exception in java ? 
+Ans : In java's Exception class Hierarcy , the Parent is Throwable, which is directly the subclass of Object class . the Throwable class has two subclass Exception and Error . the Exception class has many subclasses . 
+	some of the subclasses are used for Check Exception while some are used for Un-Checked Exception , these are : RuntimeException , IOException , SQLException . these classes are also have its subclass . for Example 
+ 	RuntimeException Class has subclasses like :  ArrayIndexOutOfBoundsException , NullPointerException, ArithmeticException and etc . IOException classes has subclass FileNotFoundException , EOFException and etc . 
+	
+	Error : Errors are Mainly caused by the Environment in which an application is running . for Example : StackOverflowError , OutOfMemoryError
+
+9 . Define Packages in java ?
+Ans : An Package can be Defined as a group of related type of classes ,interfaces , enumeration , annotation provide acces protection and mane space management . 
+	in Java Typically, package names are in lowercase and follow a reverse domain name convention. For example,
+	if our domain name is test.com,  packages name should be com.test.testNew 
+
+10 . whar are Access Modifiers in java ? 
+Ans : Acces Modifiers in java are used for restrict the visibility of classes , methods, variables and constructors . 
+	in java there are four types of access modifiers , which are : public , private , protected , default . 
+
+		a . public  : 
+			public members are accessable from any other class . 
+			there is no restriction on use public members . 
+		b . private :
+			private member is accessable only within its own class , 
+			outside of the class we can't acces it , even from the subclass we cant access it . 
+		c . protected : 
+			protected memebers are accessable within its own package and also by subclasses . 
+			if a class is subclassed outside its package, the protected members can be accessed through inheritance . 
+		d . default : 
+			default access modifiers are accessable within its own package . 
+			in case of working with default access modifier we dont need to use "default" keyword explicitly . 
+
+11 . What are Non-Access Modifiers in java ? 
+Ans : There are four types of Non-Access Modifiers in java  . these are - static, final , abstract , synchronized 
+
+	a . static : 
+		this modifier is used to check that whether a member is class member of instance member  .
+		we can use the static modifier with the variables, methods , as well as class . 
+	b . final :
+		final is a keyword which we can used to restict the users . 
+		we can use final modifier with the variable , methods, class. 
+		if we make any varible final then further modification of that variable would not possible . 
+		if we make any method final then Overriding is not possible . 
+		if we make any class final then we cant extend it . 
+	c . abstract : 
+		we can use abstract keyword with the class or method . it is used for further modification of class or method . 
+		if we make any class abstract then we can't create object of that class . 
+	d . synchronized : 
+		synchronized is used to achieve thread safeness .
+		only one thread can enter in a synchronized method .  	
+
+
+
+
+
+
+
 
