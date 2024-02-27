@@ -1,0 +1,95 @@
+1 . what is the difference between JVM,  JRE and  JDK ? 
+Ans : In java JDK, JRE and JVM these are distinct components used for serveral purpose . Here is the difference between these three . 
+		a . JDK :
+			 	JDK stands for Java developement kit . 
+				It is a software developement kit used by java programmers for writing java application . 
+				It comes with many usefull tools , such as javac, java, javap , debugger and etc . 
+			 	It includes JRE and JVM . 
+
+		b . JRE : 	
+				JRE stands for Java Runtime Environmnet . 	
+				It is a Runtime Environment used for Running java application .
+				It includes JVM and also other libraries which are required for running java application . 
+
+		c . JVM :	
+				JVM stands for java virtual machine . 
+				It is used for interpreting the java code .
+				JVM is a abstract computing machine that provides an environment for execting java byte code . 
+				JVM is machine independent .
+				
+2 . How is java programming language machine and platform independent ?
+Ans : Java Programming language gains popularity in industry because of its "WORA" feature means Write Once Run Anywhere . java is a type of programming language which use  hybrid mode (both compiler and interpreter ) for 	succesful execution of program until it shows output on the console. 
+	After writing the java program , during compilation it generates  byte code (. class file ) ,the code which human eye can't read, This code is only readable by JVM . Now if we take the ". class ' file and if we run it on different 	machine 
+	like Windows, linux , Mac , but obviously JDK software should be Installed on that machine . now then the program will work for all the machine . this is possible because JVM software was built in such a way so that it can 	execute byte code and generate corresponding Machine code (0,1) which Opearting system can understand . this features of JVM make it Machine independent  . 
+	
+	Compile java Code : javac programName.java	--> Here after successful compilation of " . java"  file, the corresponding ". class " file will be generate (byte code )   
+	Execution 		    : java programName		    --> During Excution we give the ".class " file to the JVM and JVM read the ". class " file and display the output on the console . 
+
+	In simple terms we can say that, jvm ensures that java byte code can be executed consistently accross different platforms , this features make is platform independent . 
+
+3 . Explain how java programs are executed by the JVM ?
+Ans : Java is a hybrid programming language , means it use both compilation and interpretation mode for execute a java application . but behind this Scene there are many things are happen . here i illustrate those things  :  
+		~> after writing a java program , the first phase is compilation phase , in this phase We Compile our java program by using 'javac ' command along with the program name , now after succesfull compilation of the java program , 
+		byte code or  ' . class ' file get generate for the corresponding class which is only readable by JVM . 
+
+		~>after generating the ".class " file , the Second phase which is interpreation is comes in the picture . in this phase we use 'java' command along with the fileName . and after succesfull interpreationg output displays on the 			console . 	
+		
+		    					            javac Demo.java 					                      java Demo
+		javaProgram ( .java ) 	--------------------->  byte code ( .class ) 	--------------------> 	Machine Code (0,1) 
+					        Compilation phase 						                              Execution phase 
+	
+
+4 . What is the use of var-args ?
+Ans : In java var-args or Variable length argument is a feature which allow a method to accept a variable length of argument of the same type . we use this var args when we are not knowing about how many arguments a method need 	 	to handle . 
+	The syntax of var-args is ( ... ) eg . void sum(int ... num){ ... } 
+	Inside the method the 'var args'  parameter is treated like an array of specifies type . it can take any number of arguments including zero . 
+	Example : 
+	
+	public class Main{
+		public static int add (int ... num ) {
+			int sum = 0 ; 
+			for( int data : num ) {
+			 	sum + = data ; 
+			}
+			return sum ; 
+		}
+		public static void main(String[ ]  args ) { 
+			
+		System.out.println(" sum is : " + add(1, 2, 3)) ;     	// 6 
+		System.out.println(" sum is : " + add(32, 12, 3)) ;		  // 47 
+
+		}
+	}
+			
+5 . what is the types of variables in java ?
+Ans : In java there are three types of variables . these are local variable, static variable, instance variable . 
+	Here is the explanation 	: 
+		a . Local variable 	: 
+			The variable which is declared inside the method body is called local varible . 
+			we can use this variable only inside that particular method . from the outside of any other method it is not possible to access .  
+			we can't make any variable as static . 
+		b . Instance Variable : 
+			The variable which is declared inside the class but outside the method body is called Instance varible . 
+			we can use this variable only inside that particular class . from the outside of any other class it is not possible to access . 
+			we can access that variable inside all the method available within that class . 
+			it is not declared as static . 
+		c . static variable 	: 
+			The variable which is declared as static keyword is known as static variable. 
+			for any static variable only single copy is being created for all the instances of the class . 
+			Memory allocation for static variable happens only one time , and this when the class get loaded . 
+			static any static varible default int value is 0 , default string value is null . 
+
+6 . How many types of Memory areas are allocated by JVM ? 
+Ans : There are many types of memory areas which are allocated by JVM . these are : 
+	class or method area 
+	stack Memory
+	heap Memory
+	Meta space 
+	program Counter Register 
+	
+7 . What is just -in-time ( JIT)  ? 
+Ans : In java JIT or just in time Compilation , it is a part of JVM , it optimize the performance of JVM at runtime . 
+	  It compiles the similar byte code at the same time and reduce the time taken for compilation of byte code to the machine specific language . 
+	  JIT plays a crucial role in improving the performance of java application . 
+
+
